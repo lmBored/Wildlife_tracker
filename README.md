@@ -15,7 +15,7 @@
 ### Setup
 - FE: React Native
 - BE: Python (cuz YOLO) + FastAPI/Flask(or Django)
-- DB: SQLite + Firestore
+- DB: Firestore
 - Hosting: Heroku
 - Dashboard: React Web App + Leaflet.js
 
@@ -25,7 +25,7 @@
 - BE: Node.js/Python
 - DB:
     - SQLite + PostgreSQL with PostGIS (geospatial analysis)
-    - SQLite + Firestore (simple and realtime sync)
+    - Firestore (simple and realtime sync, firestore has offline storage already)
 - Hosting: Firebase hosting/Heroku
 - Dashboard: React Web App
 - Tools: ggmapAPI + Leaflet.js + Tensorflow Lite/YOLO
