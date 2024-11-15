@@ -11,3 +11,22 @@
 - Visualize sightings and hotspots on a map. Generate simple analytics (e.g., population trends, distribution patterns).
 - Auto-suggest species names from a database to reduce errors <- YOLO.
 - Record incidents like invasive species or damaged habitats.
+
+### Setup
+- FE: React Native
+- BE: Python (cuz YOLO) + Django(or Flask)/FastAPI
+- DB: SQLite + Firestore
+- Hosting: Heroku
+- Dashboard: React Web App + Leaflet.js
+
+<!---
+### Tech stack
+- FE: React Native (js) / Flutter (Dart)
+- BE: Node.js/Python
+- DB:
+    - SQLite + PostgreSQL with PostGIS (geospatial analysis)
+    - SQLite + Firestore (simple and realtime sync)
+- Hosting: Firebase hosting/Heroku
+- Dashboard: React Web App
+- Tools: ggmapAPI + Leaflet.js + Tensorflow Lite/YOLO
+--->
