@@ -6,15 +6,9 @@
 
 # Plan
 
-- Quick recording of species, locations (with GPS), and population counts. Add notes and upload photos.
-- Enable data entry when offline, with sync functionality when back online.
-- Visualize sightings and hotspots on a map. Generate simple analytics (e.g., population trends, distribution patterns).
-- Auto-suggest species names from a database to reduce errors <- YOLO.
-- Record incidents like invasive species or damaged habitats.
-
-### Setup
-- FE: React Native
-- BE: Python (cuz YOLO) + FastAPI/Flask(or Django)
+## Setup
+- FE: React Native (js)
+- BE: FastAPI + Flask(or Django) (py)
 - DB: Firestore
 - Hosting: Heroku
 - Dashboard: React Web App + Leaflet.js
@@ -30,3 +24,24 @@
 - Dashboard: React Web App
 - Tools: ggmapAPI + Leaflet.js + Tensorflow Lite/YOLO
 --->
+
+## Ideas
+
+- Rangers will have a lightweight Android app for monitoring and reporting wildlife activities.
+- The app’s UI includes:
+    - A map showing the real-time locations of all rangers (marked blue and the current ranger is marked red).
+        - Map also visualizes wildlife sightings and hotspots. It will then generate simple analytics, including population trends, species distribution patterns, and regional hotspots.
+    - Additional environmental details, such as temperature and humidity.
+    - A button to quickly record species observations, the location of species will be updated via GPS. Population counts will be updated automatically.
+        - An option to add notes and upload photos for detailed documentation.
+    - A button to record/capture pictures of incidents such as invasive species, damaged habitats, or other ecological disruptions.
+    - Support for offline data recording, with automatic synchronization to the server when back online.
+    - A red alert button for emergencies like suspected or detected poaching activity.
+- When a ranger presses the red button:
+    - The app sends the ranger's GPS coordinates (longitude and latitude) to the central server.
+    - The server updates all rangers' apps to display the shortest path to the danger location (highlighted in red), calculated using Dijkstra’s algorithm for navigating jungle paths.
+
+## YOLO
+
+Use [YOLOv11](https://docs.ultralytics.com/models/yolo11/) trained on [cocodataset](cocodataset.org) and [image-net](https://www.image-net.org/). For the framework, we use [Ultralytics](https://github.com/ultralytics/ultralytics). 
+
