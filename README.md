@@ -27,7 +27,7 @@
 
 ## Ideas
 
-- Rangers will have a lightweight Android app for monitoring and reporting wildlife activities.
+- Rangers will have a lightweight Android/IOS app for monitoring and reporting wildlife activities.
 - The app’s UI includes:
     - A map showing the real-time locations of all rangers (marked blue and the current ranger is marked red).
         - Map also visualizes wildlife sightings and hotspots. It will then generate simple analytics, including population trends, species distribution patterns, and regional hotspots.
