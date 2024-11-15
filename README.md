@@ -14,7 +14,7 @@
 
 ### Setup
 - FE: React Native
-- BE: Python (cuz YOLO) + Django(or Flask)/FastAPI
+- BE: Python (cuz YOLO) + FastAPI/Flask(or Django)
 - DB: SQLite + Firestore
 - Hosting: Heroku
 - Dashboard: React Web App + Leaflet.js
