@@ -9,5 +9,5 @@
 - Quick recording of species, locations (with GPS), and population counts. Add notes and upload photos.
 - Enable data entry when offline, with sync functionality when back online.
 - Visualize sightings and hotspots on a map. Generate simple analytics (e.g., population trends, distribution patterns).
-- Auto-suggest species names from a database to reduce errors.
+- Auto-suggest species names from a database to reduce errors <- YOLO.
 - Record incidents like invasive species or damaged habitats.
