@@ -118,7 +118,7 @@ Use [YOLOv11](https://docs.ultralytics.com/models/yolo11/) trained on [cocodatas
 
 ## API
 
-[BoswachterApp]([https://github.com/thomaskamps/BoswachterApp])
+[BoswachterApp](https://github.com/thomaskamps/BoswachterApp)
 
 ## Guide
 
