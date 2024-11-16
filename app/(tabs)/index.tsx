@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, Button, View, ScrollView } from 'react-native';
+import { Image, StyleSheet, Button, View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { HelloWave } from '@/components/HelloWave';
@@ -11,15 +11,25 @@ export default function HomeScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.header}>
+        <HelloWave />
+        <Text style={styles.title}>Welcome to the Wildlife Tracker</Text>
+      </View>
+
       <View style={styles.buttonContainer}>
-        <Button
-          title="Add Observation"
+        <TouchableOpacity
+          style={styles.button}
           onPress={() => navigation.navigate('observations')}
-        />
-        <Button
-          title="Map"
+        >
+          <Text style={styles.buttonText}>Add Observation</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
           onPress={() => navigation.navigate('map')}
-        />
+        >
+          <Text style={styles.buttonText}>View Map</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -29,27 +39,41 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     justifyContent: 'center',
-    paddingBottom: 20, // Add padding to the bottom
-  },
-  titleContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    backgroundColor: '#f4f4f4',
+    padding: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  header: {
+    alignItems: 'center',
+    marginBottom: 30,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
+    marginTop: 10,
   },
   buttonContainer: {
+    width: '100%',
+    gap: 20, // Even spacing between buttons
     marginTop: 20,
+  },
+  button: {
+    backgroundColor: '#007BFF',
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 8,
     alignItems: 'center',
-    marginBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3, // Adds a subtle shadow effect on Android
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
