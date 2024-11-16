@@ -1,8 +1,8 @@
 # Desc
 
-🔎 The challenge:  forest rangers of Natuurmonumenten monitor all kinds of animal species, but this is still often done with pen and paper. This can be done faster and smarter. You will work with your team to develop an app that allows forest rangers to enter data directly in the field: from spotting animal species to recording locations and numbers.
+🔎 The challenge: Forest rangers at Natuurmonumenten currently monitor various animal species using traditional methods like pen and paper. This process can be streamlined and improved. Your task is to collaborate with your team to create an app that enables forest rangers to input data directly in the field, from identifying animal species to recording their locations and numbers.
 
-🐾 Your mission: Help Natuurmonumenten modernize their nature management. Develop an app that makes counting animal species, analyzing populations, and registering nuisance easier and more efficient. Together we will harmonize this registration, so that forest rangers and ecologists gain more insight into nature management in the Netherlands.
+🐾 Your mission: Assist Natuurmonumenten in modernizing their nature management practices. Develop an app that simplifies the process of counting animal species, analyzing populations, and logging disturbances. By standardizing this data collection, we aim to provide forest rangers and ecologists with enhanced insights into nature management in the Netherlands.
 
 # Requirements
 ## Functional Requirements
@@ -106,4 +106,19 @@ The application must allow users to input observations with the following fields
 ## YOLO
 
 Use [YOLOv11](https://docs.ultralytics.com/models/yolo11/) trained on [cocodataset](cocodataset.org) and [image-net](https://www.image-net.org/). For the framework, we use [Ultralytics](https://github.com/ultralytics/ultralytics). 
+
+## API
+
+[BoswachterApp]([url](https://github.com/thomaskamps/BoswachterApp))
+
+## Guide
+
+```
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
+```
+npx expo start --tunnel
+```
+
 
