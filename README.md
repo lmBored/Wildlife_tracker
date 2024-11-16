@@ -4,6 +4,65 @@
 
 🐾 Your mission: Help Natuurmonumenten modernize their nature management. Develop an app that makes counting animal species, analyzing populations, and registering nuisance easier and more efficient. Together we will harmonize this registration, so that forest rangers and ecologists gain more insight into nature management in the Netherlands.
 
+# Requirements
+## Functional Requirements
+### Must have
+1. Input of Observations:
+The application must allow users to input observations with the following fields:
+* ﻿﻿Animal species
+    * ﻿﻿Fallow deer (damhert)
+    * Red deer (edelhert)
+    * Roe deer (ree)
+    * ﻿﻿Wild boar
+    * Scottish Highlander
+    * ﻿﻿Wolf
+* ﻿﻿Number of animals
+* ﻿﻿Gender (female, male, unknown)
+* ﻿﻿Age (young, adolescent, adult, unknown)
+* ﻿﻿Health (score from 1 to 5, unknown)
+* ﻿﻿Location based on a list of sub-areas
+* ﻿﻿Date and time of observation (auto-filled but adjustable)
+* ﻿﻿Username (automatically retrieved from user profile)
+* ﻿﻿Remarks (a free text field for additional information)
+  
+## Should-have
+2. Location Services:
++ The app can capture the current GPS location. If this is implemented, the location based on the list of sub-areas in the must-haves is no longer necessary.
+Could-have
+
+3. Data Storage:
+• The data must be storable locally in case of no or poor network connection. Once a connection is re-established, the data should automatically sync to the cloud.
+
+4. Quick Input of Observations:
+* ﻿﻿The application should offer an intuitive and fast entry feature, allowing large numbers of animals to be quickly recorded.
+* ﻿﻿When entering multiple animals, the user should be able to switch easily between species, ages, genders, and health scores.
+
+5. Overview of Previous Observations:
++ Users should be able to view a summary of all observations entered at the same location to avoid duplicate entries.
+
+## Would-have
+6. Photo upload:
+• Ability to add photos to an observation, but this functionality is not mandatory.
+
+## Non-functional Requirements
+1. User-friendliness:
+* ﻿﻿The solution will be evaluated on ease of use, so it must be accessible to people without technical backgrounds.
+* ﻿﻿You can earn bonus points for good performance because animals can disappear quickly, so the user needs to be able to enter information swiftly.
+  
+2. Offline Availability:
+• It would be ideal if the solution is available offline, with the ability to store data locally until network connectivity is restored.
+
+4. Correction:
+• Any synchronization errors should be clearly displayed and easy for the user to correct.
+
+## Analyse & Rapportage Requirements
+1. Data Model for BI (Business Intelligence):
+* ﻿﻿The data model should provide the ability to export data to Excel, making it easy to analyze numbers by species, location, health score, etc.
+* ﻿﻿Time series must be supported to track changes in populations and migration patterns over time.
+  
+2. Location Data:
+• The data should provide insights into the movement and migration of animals between sub-areas and nature reserves.
+
 # Plan
 
 ## Setup
