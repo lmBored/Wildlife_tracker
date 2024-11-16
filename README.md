@@ -67,7 +67,7 @@ The application must allow users to input observations with the following fields
 # Plan
 
 ## Setup
-- FE: React Native (js)
+- FE: React Native (ts)
 - BE: FastAPI + Flask(or Django) (py)
 - DB: Firestore
 - Hosting: Heroku
