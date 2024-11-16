@@ -28,7 +28,8 @@ The application must allow users to input observations with the following fields
 ### Should-have
 2. Location Services:
 + The app can capture the current GPS location. If this is implemented, the location based on the list of sub-areas in the must-haves is no longer necessary.
-Could-have
+
+### Could-have
 
 3. Data Storage:
 + The data must be storable locally in case of no or poor network connection. Once a connection is re-established, the data should automatically sync to the cloud.
