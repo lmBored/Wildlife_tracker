@@ -30,6 +30,13 @@ export default function HomeScreen() {
         >
           <Text style={styles.buttonText}>View Map</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('data')}
+        >
+          <Text style={styles.buttonText}>View Data</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
