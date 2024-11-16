@@ -31,7 +31,7 @@ The application must allow users to input observations with the following fields
 Could-have
 
 3. Data Storage:
-• The data must be storable locally in case of no or poor network connection. Once a connection is re-established, the data should automatically sync to the cloud.
++ The data must be storable locally in case of no or poor network connection. Once a connection is re-established, the data should automatically sync to the cloud.
 
 4. Quick Input of Observations:
 * ﻿﻿The application should offer an intuitive and fast entry feature, allowing large numbers of animals to be quickly recorded.
@@ -42,7 +42,7 @@ Could-have
 
 ### Would-have
 6. Photo upload:
-• Ability to add photos to an observation, but this functionality is not mandatory.
++ Ability to add photos to an observation, but this functionality is not mandatory.
 
 ## Non-functional Requirements
 1. User-friendliness:
@@ -50,10 +50,10 @@ Could-have
 * ﻿﻿You can earn bonus points for good performance because animals can disappear quickly, so the user needs to be able to enter information swiftly.
   
 2. Offline Availability:
-• It would be ideal if the solution is available offline, with the ability to store data locally until network connectivity is restored.
++ It would be ideal if the solution is available offline, with the ability to store data locally until network connectivity is restored.
 
-4. Correction:
-• Any synchronization errors should be clearly displayed and easy for the user to correct.
+3. Correction:
++ Any synchronization errors should be clearly displayed and easy for the user to correct.
 
 ### Analyse & Rapportage Requirements
 1. Data Model for BI (Business Intelligence):
@@ -61,7 +61,7 @@ Could-have
 * ﻿﻿Time series must be supported to track changes in populations and migration patterns over time.
   
 2. Location Data:
-• The data should provide insights into the movement and migration of animals between sub-areas and nature reserves.
++ The data should provide insights into the movement and migration of animals between sub-areas and nature reserves.
 
 # Plan
 
