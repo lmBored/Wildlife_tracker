@@ -3,12 +3,22 @@ import { View, Text, TextInput, Button, ScrollView, StyleSheet, TouchableOpacity
 import { useForm, Controller } from 'react-hook-form';
 import { Picker } from '@react-native-picker/picker';
 import * as Location from 'expo-location';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ObservationsScreen = () => {
   const { control, handleSubmit, setValue } = useForm();
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = async data => {
+    try {
+      const existingData = await AsyncStorage.getItem('observations');
+      const observations = existingData ? JSON.parse(existingData) : [];
+      const newObservation = { id: Date.now().toString(), ...data };
+      observations.push(newObservation);
+      await AsyncStorage.setItem('observations', JSON.stringify(observations));
+      console.log('Data saved successfully');
+    } catch (error) {
+      console.error('Error saving data', error);
+    }
   };
 
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
