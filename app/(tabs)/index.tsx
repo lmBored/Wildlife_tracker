@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, Button, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -6,6 +7,8 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -50,6 +53,12 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Add Observation"
+          onPress={() => navigation.navigate('observations')}
+        />
+      </View>
     </ParallaxScrollView>
   );
 }
@@ -70,5 +79,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  buttonContainer: {
+    marginTop: 20,
+    alignItems: 'center',
   },
 });
