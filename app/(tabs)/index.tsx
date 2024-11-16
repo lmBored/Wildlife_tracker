@@ -15,6 +15,10 @@ export default function HomeScreen() {
           title="Add Observation"
           onPress={() => navigation.navigate('observations')}
         />
+        <Button
+          title="Map"
+          onPress={() => navigation.navigate('map')}
+        />
       </View>
   );
 }
@@ -39,5 +43,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
     alignItems: 'center',
+    marginBottom: 10,
   },
 });
