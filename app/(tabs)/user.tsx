@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import * as ImagePicker from 'expo-image-picker';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const UserScreen = () => {
   const { control, handleSubmit } = useForm();
   const [profileImage, setProfileImage] = useState(null);
+  const [isEditing, setIsEditing] = useState({
+    username: false,
+    email: false,
+    phoneNumber: false,
+    address: false,
+  });
 
   const onSubmit = data => {
     console.log(data);
+    setIsEditing({
+      username: false,
+      email: false,
+      phoneNumber: false,
+      address: false,
+    });
   };
 
   const pickImage = async () => {
@@ -45,72 +58,100 @@ const UserScreen = () => {
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Username</Text>
-        <Controller
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <TextInput
-              style={styles.input}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Enter your username"
-            />
-          )}
-          name="username"
-          defaultValue=""
-        />
+        <TouchableOpacity onPress={() => setIsEditing({ ...isEditing, username: !isEditing.username })}>
+          <MaterialIcons name="edit" size={24} color="black" />
+        </TouchableOpacity>
+        {isEditing.username ? (
+          <Controller
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <TextInput
+                style={styles.input}
+                onChangeText={onChange}
+                value={value}
+                placeholder="username"
+              />
+            )}
+            name="username"
+            defaultValue=""
+          />
+        ) : (
+          <Text style={styles.placeholderText}>username</Text>
+        )}
       </View>
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Email</Text>
-        <Controller
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <TextInput
-              style={styles.input}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Enter your email"
-              keyboardType="email-address"
-            />
-          )}
-          name="email"
-          defaultValue=""
-        />
+        <TouchableOpacity onPress={() => setIsEditing({ ...isEditing, email: !isEditing.email })}>
+          <MaterialIcons name="edit" size={24} color="black" />
+        </TouchableOpacity>
+        {isEditing.email ? (
+          <Controller
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <TextInput
+                style={styles.input}
+                onChangeText={onChange}
+                value={value}
+                placeholder="email@domain"
+                keyboardType="email-address"
+              />
+            )}
+            name="email"
+            defaultValue=""
+          />
+        ) : (
+          <Text style={styles.placeholderText}>email@domain</Text>
+        )}
       </View>
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Phone Number</Text>
-        <Controller
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <TextInput
-              style={styles.input}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Enter your phone number"
-              keyboardType="phone-pad"
-            />
-          )}
-          name="phoneNumber"
-          defaultValue=""
-        />
+        <TouchableOpacity onPress={() => setIsEditing({ ...isEditing, phoneNumber: !isEditing.phoneNumber })}>
+          <MaterialIcons name="edit" size={24} color="black" />
+        </TouchableOpacity>
+        {isEditing.phoneNumber ? (
+          <Controller
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <TextInput
+                style={styles.input}
+                onChangeText={onChange}
+                value={value}
+                placeholder="+31 xxx xxx xxx"
+                keyboardType="phone-pad"
+              />
+            )}
+            name="phoneNumber"
+            defaultValue=""
+          />
+        ) : (
+          <Text style={styles.placeholderText}>+31 xxx xxx xxx</Text>
+        )}
       </View>
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Address</Text>
-        <Controller
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <TextInput
-              style={styles.input}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Enter your address"
-            />
-          )}
-          name="address"
-          defaultValue=""
-        />
+        <TouchableOpacity onPress={() => setIsEditing({ ...isEditing, address: !isEditing.address })}>
+          <MaterialIcons name="edit" size={24} color="black" />
+        </TouchableOpacity>
+        {isEditing.address ? (
+          <Controller
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <TextInput
+                style={styles.input}
+                onChangeText={onChange}
+                value={value}
+                placeholder="Enter your address"
+              />
+            )}
+            name="address"
+            defaultValue=""
+          />
+        ) : (
+          <Text style={styles.placeholderText}>Enter your address</Text>
+        )}
       </View>
 
       <TouchableOpacity style={styles.submitButton} onPress={handleSubmit(onSubmit)}>
@@ -203,6 +244,20 @@ const styles = StyleSheet.create({
   },
   bottomSpace: {
     height: 50,
+  },
+  placeholderText: {
+    fontSize: 16,
+    color: '#aaa',
+    padding: 10,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 2,
   },
 });
 
