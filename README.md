@@ -103,6 +103,15 @@ The application must allow users to input observations with the following fields
 - Additional environmental details, such as temperature and humidity.
 --->
 
+## Current Implementation
+
+- Functionalities:
+   - Add observations of animals
+   - View data
+   - View map with current location
+   - Login
+   - etc.
+
 ## YOLO
 
 Use [YOLOv11](https://docs.ultralytics.com/models/yolo11/) trained on [cocodataset](cocodataset.org) and [image-net](https://www.image-net.org/). For the framework, we use [Ultralytics](https://github.com/ultralytics/ultralytics). 
