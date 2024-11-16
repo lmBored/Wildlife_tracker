@@ -31,15 +31,17 @@
 - The app’s UI includes:
     - A map showing the real-time locations of all rangers (marked blue and the current ranger is marked red).
         - Map also visualizes wildlife sightings and hotspots. It will then generate simple analytics, including population trends, species distribution patterns, and regional hotspots.
-    - Additional environmental details, such as temperature and humidity.
     - A button to quickly record species observations, the location of species will be updated via GPS. Population counts will be updated automatically.
         - An option to add notes and upload photos for detailed documentation.
     - A button to record/capture pictures of incidents such as invasive species, damaged habitats, or other ecological disruptions.
     - Support for offline data recording, with automatic synchronization to the server when back online.
+<!---
     - A red alert button for emergencies like suspected or detected poaching activity.
 - When a ranger presses the red button:
     - The app sends the ranger's GPS coordinates (longitude and latitude) to the central server.
     - The server updates all rangers' apps to display the shortest path to the danger location (highlighted in red), calculated using Dijkstra’s algorithm for navigating jungle paths.
+- Additional environmental details, such as temperature and humidity.
+--->
 
 ## YOLO
 
