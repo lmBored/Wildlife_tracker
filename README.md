@@ -25,7 +25,7 @@ The application must allow users to input observations with the following fields
 * ﻿﻿Username (automatically retrieved from user profile)
 * ﻿﻿Remarks (a free text field for additional information)
   
-## Should-have
+### Should-have
 2. Location Services:
 + The app can capture the current GPS location. If this is implemented, the location based on the list of sub-areas in the must-haves is no longer necessary.
 Could-have
@@ -40,7 +40,7 @@ Could-have
 5. Overview of Previous Observations:
 + Users should be able to view a summary of all observations entered at the same location to avoid duplicate entries.
 
-## Would-have
+### Would-have
 6. Photo upload:
 • Ability to add photos to an observation, but this functionality is not mandatory.
 
@@ -55,7 +55,7 @@ Could-have
 4. Correction:
 • Any synchronization errors should be clearly displayed and easy for the user to correct.
 
-## Analyse & Rapportage Requirements
+### Analyse & Rapportage Requirements
 1. Data Model for BI (Business Intelligence):
 * ﻿﻿The data model should provide the ability to export data to Excel, making it easy to analyze numbers by species, location, health score, etc.
 * ﻿﻿Time series must be supported to track changes in populations and migration patterns over time.
