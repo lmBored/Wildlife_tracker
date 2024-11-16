@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, Button, View } from 'react-native';
+import { Image, StyleSheet, Platform, Button, View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { HelloWave } from '@/components/HelloWave';
@@ -10,7 +10,8 @@ export default function HomeScreen() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.buttonContainer}>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.buttonContainer}>
         <Button
           title="Add Observation"
           onPress={() => navigation.navigate('observations')}
@@ -20,10 +21,16 @@ export default function HomeScreen() {
           onPress={() => navigation.navigate('map')}
         />
       </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    paddingBottom: 20, // Add padding to the bottom
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',

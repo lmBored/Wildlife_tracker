@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, Button, Picker, ScrollView } from 'react-native';
+import { View, Text, TextInput, Button, ScrollView, StyleSheet } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
+import { Picker } from '@react-native-picker/picker';
 
 const ObservationsScreen = () => {
   const { control, handleSubmit } = useForm();
@@ -10,8 +11,8 @@ const ObservationsScreen = () => {
   };
 
   return (
-    <ScrollView>
-      <View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.inputContainer}>
         <Text>Animal species</Text>
         <Controller
           control={control}
@@ -30,7 +31,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Number of animals</Text>
         <Controller
           control={control}
@@ -47,7 +48,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Gender</Text>
         <Controller
           control={control}
@@ -63,7 +64,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Age</Text>
         <Controller
           control={control}
@@ -80,7 +81,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Health</Text>
         <Controller
           control={control}
@@ -99,7 +100,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Location</Text>
         <Controller
           control={control}
@@ -114,7 +115,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Date and time</Text>
         <Controller
           control={control}
@@ -129,7 +130,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Username</Text>
         <Controller
           control={control}
@@ -144,7 +145,7 @@ const ObservationsScreen = () => {
         />
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <Text>Remarks</Text>
         <Controller
           control={control}
@@ -160,8 +161,22 @@ const ObservationsScreen = () => {
       </View>
 
       <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <View style={styles.bottomSpace} />
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    paddingBottom: 20, // Add padding to the bottom
+  },
+  inputContainer: {
+    marginBottom: 20,
+  },
+  bottomSpace: {
+    height: 100, // Adjust the height as needed
+  },
+});
 
 export default ObservationsScreen;
