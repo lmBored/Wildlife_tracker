@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { Picker } from '@react-native-picker/picker';
 import * as Location from 'expo-location';
@@ -34,7 +34,7 @@ const ObservationsScreen = () => {
 
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
-      setValue('location', JSON.stringify(location)); // Set the default value for location
+      setValue('location', `${location.coords.latitude}, ${location.coords.longitude}`); // Set the default value for location
     }
 
     getCurrentLocation();
@@ -44,7 +44,7 @@ const ObservationsScreen = () => {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
-    text = JSON.stringify(location);
+    text = `${location.coords.latitude}, ${location.coords.longitude}`;
   }
 
   return (
