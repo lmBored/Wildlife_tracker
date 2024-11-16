@@ -3,24 +3,12 @@ import { View, Text, TextInput, Button, ScrollView, StyleSheet, TouchableOpacity
 import { useForm, Controller } from 'react-hook-form';
 import { Picker } from '@react-native-picker/picker';
 import * as Location from 'expo-location';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import NetInfo from '@react-native-community/netinfo';
-import firestore from '@react-native-firebase/firestore';
 
 const ObservationsScreen = () => {
   const { control, handleSubmit, setValue } = useForm();
 
-  const onSubmit = async data => {
-    try {
-      await AsyncStorage.setItem('observation', JSON.stringify(data));
-      const state = await NetInfo.fetch();
-      if (state.isConnected) {
-        await firestore().collection('observations').add(data);
-        await AsyncStorage.removeItem('observation');
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  const onSubmit = data => {
+    console.log(data);
   };
 
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
@@ -41,27 +29,6 @@ const ObservationsScreen = () => {
 
     getCurrentLocation();
   }, [setValue]);
-
-  useEffect(() => {
-    const syncData = async () => {
-      const state = await NetInfo.fetch();
-      if (state.isConnected) {
-        const observation = await AsyncStorage.getItem('observation');
-        if (observation) {
-          await firestore().collection('observations').add(JSON.parse(observation));
-          await AsyncStorage.removeItem('observation');
-        }
-      }
-    };
-
-    const unsubscribe = NetInfo.addEventListener(state => {
-      if (state.isConnected) {
-        syncData();
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   let text = 'Waiting...';
   if (errorMsg) {
